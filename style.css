@@ -1,0 +1,1000 @@
+/* ==========================================
+   FOREVER MY BROTHER | ADI BHAI
+   Luxury Birthday Website
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#050505;
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#090909;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(#D4AF37,#FFD700);
+
+    border-radius:20px;
+
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+#intro{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    overflow:hidden;
+
+}
+
+.intro-content{
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+.loading-text{
+
+    font-size:40px;
+
+    color:#D4AF37;
+
+    font-family:'Cinzel',serif;
+
+    letter-spacing:2px;
+
+    margin-bottom:30px;
+
+    animation:glow 2s infinite;
+
+}
+
+.loading-bar{
+
+    width:320px;
+
+    height:5px;
+
+    background:#222;
+
+    border-radius:50px;
+
+    margin:auto;
+
+    overflow:hidden;
+
+}
+
+.loading-bar span{
+
+    display:block;
+
+    width:0%;
+
+    height:100%;
+
+    background:linear-gradient(to right,#D4AF37,#FFD700);
+
+    animation:loading 5s linear forwards;
+
+}
+
+.quote{
+
+    opacity:0;
+
+    margin-top:40px;
+
+    animation:quoteAppear 1s forwards;
+
+    animation-delay:2s;
+
+}
+
+.quote p{
+
+    font-size:24px;
+
+    line-height:40px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.quote small{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#D4AF37;
+
+    font-size:16px;
+
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+#hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at top,#2b2100 0%,#0d0d0d 35%,#000000 100%);
+
+}
+
+/* Golden light effect */
+
+#hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    background:radial-gradient(circle,
+    rgba(255,215,0,.18),
+    transparent 70%);
+
+    top:-220px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    filter:blur(30px);
+
+}
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.profile{
+
+    width:230px;
+
+    height:230px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:6px solid #D4AF37;
+
+    box-shadow:
+    0 0 30px rgba(212,175,55,.7),
+    0 0 70px rgba(212,175,55,.4);
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+.hero-content h1{
+
+    margin-top:35px;
+
+    font-size:55px;
+
+    color:#FFD700;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.hero-content h3{
+
+    margin-top:20px;
+
+    color:#eee;
+
+    font-size:22px;
+
+    font-weight:300;
+
+}
+
+#exploreBtn{
+
+    margin-top:40px;
+
+    padding:15px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(#D4AF37,#FFD700);
+
+    color:#111;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+#exploreBtn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 0 35px gold;
+
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes glow{
+
+0%,100%{
+
+text-shadow:0 0 15px gold;
+
+}
+
+50%{
+
+text-shadow:0 0 35px gold;
+
+}
+
+}
+
+@keyframes loading{
+
+to{
+
+width:100%;
+
+}
+
+}
+
+@keyframes quoteAppear{
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+}
+
+.profile{
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:6px solid #FFD700;
+
+    box-shadow:
+    0 0 20px #FFD700,
+    0 0 50px rgba(255,215,0,0.7),
+    0 0 90px rgba(255,215,0,0.4);
+
+    animation:float 4s ease-in-out infinite;
+    transition:0.5s;
+}
+
+.profile:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 35px gold,
+    0 0 70px gold,
+    0 0 120px gold;
+
+}
+
+/* =========================
+   GOLDEN PARTICLES
+========================= */
+
+.particles{
+
+    position:absolute;
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.particles::before,
+.particles::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+
+    radial-gradient(circle,#FFD700 2px,transparent 2px),
+    radial-gradient(circle,#D4AF37 1px,transparent 1px);
+
+    background-size:120px 120px,80px 80px;
+
+    animation:particlesMove 18s linear infinite;
+
+    opacity:.35;
+
+}
+
+.particles::after{
+
+    animation-duration:28s;
+
+    opacity:.20;
+
+}
+
+@keyframes particlesMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-250px);
+
+    }
+
+}
+
+/* =========================
+   LETTER SECTION
+========================= */
+
+#letter{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:80px 20px;
+
+    background:linear-gradient(to bottom,#050505,#111111);
+
+}
+
+.letter-box{
+
+    max-width:850px;
+
+    width:100%;
+
+    padding:50px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(255,215,0,0.4);
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 30px rgba(255,215,0,0.25);
+
+    text-align:center;
+
+}
+
+.letter-box h2{
+
+    color:#FFD700;
+
+    font-size:42px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:30px;
+
+}
+
+.letter-text{
+
+    font-size:20px;
+
+    line-height:2;
+
+    color:#f5f5f5;
+
+}
+
+.letter-box strong{
+
+    color:#FFD700;
+
+}
+
+.letter-box:hover{
+
+    transform:translateY(-8px);
+
+    transition:.5s;
+
+    box-shadow:
+    0 0 40px rgba(255,215,0,.45);
+
+}
+
+/* =========================
+   WHY YOU'RE SPECIAL
+========================= */
+
+#special{
+
+    min-height:100vh;
+
+    padding:100px 30px;
+
+    background:
+    linear-gradient(to bottom,#0a0a0a,#000);
+
+    text-align:center;
+
+}
+
+#special h2{
+
+    color:#FFD700;
+
+    font-size:46px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:60px;
+
+}
+
+.special-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+.special-card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid
+    rgba(255,215,0,.30);
+
+    border-radius:22px;
+
+    padding:35px 25px;
+
+    transition:.45s;
+
+    box-shadow:
+    0 0 15px rgba(255,215,0,.12);
+
+}
+
+.special-card h3{
+
+    color:#FFD700;
+
+    margin-bottom:18px;
+
+    font-size:26px;
+
+}
+
+.special-card p{
+
+    color:#eee;
+
+    line-height:1.8;
+
+    font-size:17px;
+
+}
+
+.special-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(255,215,0,.45);
+
+    border-color:#FFD700;
+
+}
+
+/* =========================
+   FINAL SURPRISE
+========================= */
+
+#surprise{
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:linear-gradient(to bottom,#000,#111);
+
+    padding:80px 20px;
+
+}
+
+#surprise h2{
+
+    color:#FFD700;
+
+    font-size:48px;
+
+    font-family:'Cinzel',serif;
+
+    margin-bottom:20px;
+
+}
+
+#surprise p{
+
+    color:#ddd;
+
+    font-size:20px;
+
+    margin-bottom:40px;
+
+}
+
+#openMessage{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:linear-gradient(#FFD700,#D4AF37);
+
+    color:#111;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+}
+
+#openMessage:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 40px rgba(255,215,0,.7);
+
+}
+
+/* =========================
+   POPUP
+========================= */
+
+#popup{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:999999;
+
+}
+
+.popup-box{
+
+    width:90%;
+
+    max-width:700px;
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    padding:40px;
+
+    background:rgba(20,20,20,.95);
+
+    border:2px solid #FFD700;
+
+    border-radius:25px;
+
+    box-shadow:0 0 40px rgba(255,215,0,.5);
+
+    text-align:center;
+
+    position:relative;
+
+}
+
+.popup-box::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.popup-box::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+.popup-box::-webkit-scrollbar-thumb{
+
+    background:#FFD700;
+
+    border-radius:20px;
+
+}
+
+.popup-box h2{
+
+    color:#FFD700;
+
+    margin-bottom:25px;
+
+    font-family:'Cinzel',serif;
+
+}
+
+.popup-box p{
+
+    color:#f2f2f2;
+
+    line-height:2;
+
+    font-size:19px;
+
+}
+
+#closePopup{
+
+    position:absolute;
+
+    top:15px;
+
+    right:20px;
+
+    font-size:35px;
+
+    color:#FFD700;
+
+    cursor:pointer;
+
+}
+
+/* ==========================================
+   PHOTO GALLERY
+========================================== */
+
+#gallery{
+    min-height:100vh;
+    padding:110px 30px;
+    background:
+    radial-gradient(circle at center,
+    rgba(212,175,55,.08),
+    transparent 45%),
+    linear-gradient(to bottom,#000,#0b0b0b);
+    text-align:center;
+}
+
+.gallery-heading span{
+    display:block;
+    color:#D4AF37;
+    font-size:14px;
+    letter-spacing:5px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.gallery-heading h2{
+    color:#FFD700;
+    font-size:46px;
+    font-family:'Cinzel',serif;
+    margin-bottom:15px;
+}
+
+.gallery-heading p{
+    color:#aaa;
+    font-size:17px;
+    margin-bottom:55px;
+}
+
+.gallery-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+.gallery-item{
+    position:relative;
+    overflow:hidden;
+    border-radius:25px;
+    border:1px solid rgba(255,215,0,.35);
+    background:#111;
+    box-shadow:0 0 25px rgba(255,215,0,.12);
+    transition:.5s;
+}
+
+.gallery-item img{
+    width:100%;
+    height:430px;
+    display:block;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.gallery-item:hover{
+    transform:translateY(-10px);
+    border-color:#FFD700;
+    box-shadow:
+    0 0 30px rgba(255,215,0,.35),
+    0 0 70px rgba(255,215,0,.15);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.07);
+}
+
+@media(max-width:700px){
+
+    #gallery{
+        padding:80px 18px;
+    }
+
+    .gallery-heading h2{
+        font-size:32px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+        gap:22px;
+    }
+
+    .gallery-item img{
+        height:380px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:700px){
+
+    #hero{
+        min-height:100vh;
+        padding:30px 18px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .profile{
+        width:190px;
+        height:190px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+        line-height:1.3;
+    }
+
+    .hero-content h3{
+        font-size:14px;
+        line-height:1.6;
+        padding:0 10px;
+    }
+
+    #exploreBtn{
+        font-size:14px;
+        padding:13px 22px;
+    }
+
+    #journey{
+        padding:70px 18px;
+    }
+
+    .letter-box{
+        padding:30px 20px;
+    }
+
+    .letter-box h2{
+        font-size:28px;
+    }
+
+    .letter-text{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    #special{
+        padding:70px 18px;
+    }
+
+    #special h2{
+        font-size:32px;
+    }
+
+    .special-container{
+        grid-template-columns:1fr;
+        gap:20px;
+    }
+
+    .special-card{
+        padding:25px 20px;
+    }
+
+    #surprise{
+        padding:80px 18px;
+    }
+
+    #surprise h2{
+        font-size:32px;
+    }
+
+    #surprise p{
+        font-size:15px;
+    }
+
+    #openMessage{
+        font-size:14px;
+        padding:14px 20px;
+    }
+
+    .popup-box{
+        width:90%;
+        padding:30px 20px;
+    }
+
+    .popup-box h2{
+        font-size:26px;
+    }
+
+    #typingMessage{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+}
